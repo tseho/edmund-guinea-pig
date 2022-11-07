@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  phpcsfixer:
+    docker:
+      - image: cimg/php:8.1.12
+    steps:
+      - checkout
+      - run: composer install --no-scripts --no-interaction --no-ansi --prefer-dist --optimize-autoloader --no-dev
+      - run: mkdir -p var/tests
+      - run: php vendor/bin/php-cs-fixer fix --diff --dry-run --format="json" > var/tests/phpcsfixer.json
+      - store_artifacts:
+          path: var/tests
+
+workflows:
+  tests:
+    jobs:
+      - phpcsfixer
