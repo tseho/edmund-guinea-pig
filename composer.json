@@ -7,14 +7,13 @@
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "friendsofphp/php-cs-fixer": "^3.13",
         "symfony/console": "6.*",
         "symfony/dotenv": "6.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.*",
         "symfony/runtime": "6.*",
         "symfony/yaml": "6.*"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {
